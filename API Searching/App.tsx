@@ -58,11 +58,11 @@ const App = () =>{
     <View style={styles.main}>
       <View style={styles.text1}> 
         <Text style={styles.main1}>
-          Query Box
+          Search Box
         </Text>  
       </View>
       <View style={styles.input1}>
-        <TextInput style={styles.input2} placeholder='Enter your query' value={name} onChangeText={(text)=>openWeb4(text)}></TextInput>
+        <TextInput style={styles.input2} placeholder='Enter your query' onChangeText={(text)=>openWeb4(text)} value={name}></TextInput>
         <TouchableHighlight style={styles.text1aa} onPress={openWeb4}>
           <Text style={{marginTop:"auto",marginBottom:"auto"}}>Clear</Text>
         </TouchableHighlight>
@@ -71,12 +71,26 @@ const App = () =>{
         </TouchableHighlight>
         <View style={{flex:1}}>
         {
+          data.length && name.length?
+          <View style={{padding:10,flexDirection:"row",justifyContent:"space-between"}}>
+            <Text>Name</Text>
+            <Text>Age</Text>
+            <Text>Id</Text>
+          </View>
+          :
+            null
+        }
+        {
           data.length ?
-            data.map((item)=><View key={item.id} style={{padding:10,flexDirection:"row",justifyContent:"space-between"}}>
-              <Text>{item.name}</Text>
-              <Text>{item.age}</Text>
-              <Text>{item.id}</Text>
-            </View>)
+            name.length?
+              data.map((item)=><View key={item.id} style={{padding:10,flexDirection:"row",justifyContent:"space-between"}}>
+                  <Text>{item.name}</Text>
+                  <Text>{item.age}</Text>
+                  <Text>{item.id}</Text>
+                </View>
+              )
+              :
+                null
             :
             <View>{
               name.length ?
@@ -94,7 +108,7 @@ const App = () =>{
 }
 const styles = StyleSheet.create({
   main:{
-      flex:1,backgroundColor: 'greenblue',
+      flex:1,backgroundColor: 'coral',
       justifyContent:"center", alignItems:'center',
   },
   main1:{
