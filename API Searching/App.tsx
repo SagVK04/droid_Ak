@@ -43,8 +43,6 @@ const App = () =>{
     }
   }
   const showData = async ()=>{
-    Alert.alert(newEmail,newId);
-    Alert.alert(name,newAge);
     const url = `http://192.168.0.184:3000/users`;
     let result = await fetch(url,{
       method:"POST",
@@ -52,6 +50,10 @@ const App = () =>{
       },
       body:JSON.stringify({name:name,age:newAge,email:newEmail,id:newId})
     })
+    let result1 = await result.json();
+    if(result1){
+      Alert.alert("User Added Successfully!");
+    }
   }
   const modifyData = (()=>{
       setNewInput(true);
@@ -92,6 +94,7 @@ const App = () =>{
       fetch(`${baseurl}/${newId}`,putAPI);
       setNewInput(false);
       setNewAge(''); setNewEmail(''); setNewId(''); setName(''); setNewInputName('');
+      Alert.alert("User Modified Successfully");
     }
   })
   const modifyDataId = (()=>{
@@ -99,7 +102,6 @@ const App = () =>{
   })
   const deleteUser = async()=>{
     const url = `http://192.168.0.184:3000/users`;
-    Alert.alert(`${url}/${newId}`);
     let result = fetch(`${url}/${newId}`,{
       method:"delete",
     });
