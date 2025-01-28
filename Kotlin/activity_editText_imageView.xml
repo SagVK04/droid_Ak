@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".EditviewImageviewActivity"
+    android:background="@color/white">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sign Up"
+        android:textSize="36sp"
+        android:gravity="center"
+        android:layout_marginTop="20sp"
+        android:layout_marginBottom="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/cardview_dark_background"/>
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="200sp"
+        android:src="@drawable/signup"
+        android:scaleType="fitCenter"
+        android:contentDescription="Signup Image"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10sp"
+        android:hint="@string/name"
+        android:inputType="textPersonName"
+        android:maxEms="6"
+        android:minHeight="48dp"
+        android:textColor="@color/black"
+        android:textColorHint="#5F5B5B" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10sp"
+        android:hint="@string/email"
+        android:inputType="textEmailAddress"
+        android:minHeight="48dp"
+        android:textColor="@color/black"
+        android:textColorHint="#5F5B5B" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10sp"
+        android:hint="@string/phone_number"
+        android:inputType="number"
+        android:minHeight="48dp"
+        android:textColor="@color/black"
+        android:textColorHint="#5F5B5B" />
+
+</LinearLayout>
